@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>작업현황판</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    caption {
+      display: none;
+    }
+
+    .contents {
+      width: 1400px;
+      margin: 50px auto;
+      font-family: 'Malgun Gothic'
+    }
+
+    .contents table {
+      clear: both;
+      width: 100%;
+      border-top: 2px solid #555;
+      background: #fff;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .contents th {
+      background: #f7f7f7;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      color: #000;
+      text-align: center;
+      line-height: 130%;
+      vertical-align: middle;
+      padding: 13px 4px;
+    }
+
+    .contents td {
+      border-right: 1px solid #ddd;
+      border-bottom: #ddd solid 1px;
+      line-height: 130%;
+      text-align: center;
+      padding: 13px 13px;
+    }
+
+    .contents th:last-child,
+    .contents td:last-child {
+      border-right: none;
+    }
+
+    .contents td:last-child {
+      text-align: left;
+    }
+
+    .contents td:nth-child(even) {
+      background: #eee;
+    }
+
+    .contents tbody tr:first-child td {
+      border-top: 2px solid #555;
+    }
+
+    .red {
+      color: orangered
+    }
+
+    .unused {
+      text-decoration: line-through;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contents">
+    <h1>작업현황판</h1>
+    <table cellspacing=0>
+      <caption>작업현황판</caption>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>화면 ID</th>
+          <th>대분류</th>
+          <th>중분류</th>
+          <th>소분류</th>
+          <th>링크</th>
+          <th>수정 완료일</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>01</td>
+          <td>main</td>
+          <td>로그인</td>
+          <td></td>
+          <td><a href="login.html" target="_blank">login.html</a></td>
+          <td>2023.06.24</td>
+          <td><span class="red"></span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>02-01</td>
+          <td>운영요약화면</td>
+          <td>메인</td>
+          <td></td>
+          <td><a href="status.html" target="_blank">status.html</a></td>
+          <td>2023.06.25</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>02-02</td>
+          <td>운영요약화면</td>
+          <td>공지사항</td>
+          <td>목록</td>
+          <td><a href="notice_list.html" target="_blank">notice_list.html</a></td>
+          <td>2023.06.25</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>02-03</td>
+          <td>운영요약화면</td>
+          <td>공지사항</td>
+          <td>상세</td>
+          <td><a href="notice_write.html" target="_blank">notice_write.html</a></td>
+          <td>2023.06.25</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>03-01</td>
+          <td>실시간 모니터링 화면</td>
+          <td>전자지도</td>
+          <td></td>
+          <td><a href="map_new.html" target="_blank">map_new.html</a></td>
+          <td>2023.06.25</td>
+          <td><span class="red">수정</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>03-02</td>
+          <td>실시간 모니터링 화면</td>
+          <td>BIT상태정보</td>
+          <td>목록</td>
+          <td><a href="bit_list.html" target="_blank">bit_list.html</a></td>
+          <td>2023.06.28</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>03-02</td>
+          <td>실시간 모니터링 화면</td>
+          <td>BIT상태정보</td>
+          <td>등록, 수정</td>
+          <td><a href="bit_write.html" target="_blank">bit_write.html</a></td>
+          <td>2023.06.28</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>04</td>
+          <td>결행정보관리</td>
+          <td>결행정보 상세보기</td>
+          <td></td>
+          <td><a href="carryout_view.html" target="_blank">carryout_view.html</a></td>
+          <td>2023.06.29</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>05-01</td>
+          <td>통계관리화면</td>
+          <td>노선운행 그래프</td>
+          <td></td>
+          <td><a href="stats_line.html" target="_blank">stats_line.html</a></td>
+          <td>2023.06.29</td>
+          <td>
+            <span class="red"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>05-02</td>
+          <td>통계관리화면</td>
+          <td>노선운행 이력</td>
+          <td></td>
+          <td><a href="stats_log.html" target="_blank">stats_log.html</a></td>
+          <td>2023.06.29</td>
+          <td><span class="red"></span></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>06</td>
+          <td>시스템 관리화면</td>
+          <td></td>
+          <td></td>
+          <td><a href="system.html" target="_blank">system.html</a></td>
+          <td>2023.06.30</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>07</td>
+          <td>상황판 화면</td>
+          <td></td>
+          <td></td>
+          <td><a href="bulletin.html" target="_blank">bulletin.html</a></td>
+          <td>2023.06.30</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td></td>
+          <td>상황판 화면</td>
+          <td></td>
+          <td></td>
+          <td><a href="map_board.html" target="_blank">map_board.html</a></td>
+          <td>2023.09.16</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

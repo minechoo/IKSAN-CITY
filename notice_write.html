@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 등록</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/common.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load("./header.html");
+      $('#footer').load("./footer.html");
+      $('#left_menu').load("./left_menu.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <main>
+    <div id="left_menu"></div>
+
+    <div class="content_wrap" id="content_wrap">
+      <h1><span class="blue">공지</span>사항 등록</h1>
+      <div class="table_wrap">
+        <div class="search_box">
+          <select name="" id="">
+            <option value="">제목 + 내용</option>
+            <option value="">제목</option>
+            <option value="">내용</option>
+          </select>
+          <span>
+            <input type="text">
+            <button class="btn_search">검색</button>
+          </span>
+          <button class="btn_up">공지사항 등록</button>
+        </div>
+
+        <table>
+          <caption>공지사항 등록</caption>
+          <colgroup>
+            <col style="width: 10%">
+            <col style="width: auto">
+            <col style="width: 10%">
+            <col style="width: auto">
+          </colgroup>
+          <tr>
+            <th colspan="4" class="black">교통 통제 안내</th>
+          </tr>
+          <tr>
+            <th>등록일</th>
+            <td>2023-02-01</td>
+            <th>작성자</th>
+            <td>admin01</td>
+          </tr>
+          <tr>
+            <th>첨부파일</th>
+            <td colspan="3">
+              <span class="bd_blue">교통 통제안내 </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="p_20">
+              마라톤 대회<br>
+              · 통제구간 : 익산역 ~ 원광대학교 정문<br>
+              · 통제시간 : 09:00 ~ 10:00<br>
+              · 우회정보 :<br>
+              1번 - 우체국으로 우회운행<br>
+
+              세부사항은 붙임파일을 참고하시기 바랍니다. 감사합니다.
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="p_20">
+              <div class="btn_box">
+                <div>
+                  <button class="btn p_0_40">목록보기</button>
+                  <button class="btn prev">이전 글</button>
+                  <button class="btn next">다음 글</button>
+                </div>
+                <div>
+                  <button class="btn_grey">수정</button>
+                  <button class="btn_grey_b">삭제</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+</body>
+
+</html>

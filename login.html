@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load("./header.html");
+      $('#footer').load("./footer.html");
+      $('#left_menu').load("./left_menu.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div class="login_wrap">
+    <div class="img_area"><img src="img/img_login.png" alt=""></div>
+    <div class="login_box">
+      <div class="login_inner">
+        <h2>LOGIN</h2>
+        <div class="input_box">
+          <label for="id" class="offscreen">아이디</label>
+          <input type="text" id="id" placeholder="아이디">
+          <div class="pwd_wrap">
+            <label for="pwd" class="offscreen">비밀번호</label>
+            <input type="password" id="pwd" placeholder="비밀번호">
+            <button class="btn_clear"></button>
+          </div>
+
+          <button type="submit" class="btn_submit">로그인</button>
+        </div>
+        <div class="doc">
+          <div class="doc_in doc_left">접근권한 신청서</div>
+          <div class="doc_in doc_right" id="btn_toggle">메뉴얼 다운로드</div>
+          <div class="login_pop">
+            <h3><span class="blue">메뉴얼</span> 다운로드</h3>
+            <div class="grey_box">
+              <h4>메뉴얼 종류</h4>
+              <div class="down_doc">
+                <p>접속방법</p>
+                <p>운영단말메뉴얼</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- alert -->
+    <div class="alert">
+      <div class="content">
+        <p>아이디 또는 비밀번호를 잘못 입력했습니다.<br>
+          입력하신 내용을 다시 확인해주세요.</p>
+      </div>
+      <button>확인</button>
+    </div>
+    <!-- //alert -->
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    const btnToggle = document.querySelector('#btn_toggle');
+    const docDown = document.querySelector('.login_pop');
+
+    btnToggle.addEventListener('click', () => {
+      docDown.classList.toggle('on');
+    });
+
+    const btnClear = document.querySelector('.btn_clear');
+    btnClear.addEventListener('click', function () {
+      btnClear.parentNode.querySelector('input').value = "";
+    })
+  </script>
+</body>
+
+</html>

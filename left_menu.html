@@ -1,0 +1,95 @@
+<ul>
+  <li><a href="#" class="menu"><img src="img/icon22.png" alt="">운영요약</a>
+    <ul class="subUl">
+      <li><a href="#" class="on">운영 현황</a></li>
+      <li><a href="#">구분별 등록</a></li>
+      <li><a href="#">노선별 전일 운행현황</a></li>
+    </ul>
+  </li>
+  <li><a href="#" class="menu"><img src="img/icon23.png" alt="">실시간모니터링</a>
+    <ul class="subUl">
+      <li><a href="#">전자지도</a></li>
+      <li><a href="#">노선단면도</a>
+        <ul>
+          <li><a href="#" class="on">노선운행도</a></li>
+          <li><a href="#">구간별 교통정보</a></li>
+          <li><a href="#">구간별 배차정보</a></li>
+        </ul>
+      </li>
+      <li><a href="#">BIT상태</a>
+        <ul>
+          <li><a href="#">BIT 상태정보</a></li>
+          <li><a href="#">BIT 상태정보 등록</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" class="menu"><img src="img/icon28.png" alt="">결행정보 관리</a>
+    <ul class="subUl">
+      <li><a href="#">결행정보 리스트</a></li>
+      <li><a href="#">결행정보 등록</a></li>
+    </ul>
+  </li>
+  <li><a href="#" class="menu"><img src="img/icon24.png" alt="">게시물 관리</a>
+    <ul class="subUl">
+      <li><a href="#">공지사항</a>
+        <ul>
+          <li><a href="#">공지사항 리스트</a></li>
+          <li><a href="#">공지사항 등록</a></li>
+        </ul>
+      </li>
+      <li><a href="#">메시지</a>
+        <ul>
+          <li><a href="#">메시지 전송 리스트</a></li>
+          <li><a href="#">메시지 전송</a></li>
+        </ul>
+      </li>
+      <li><a href="#">BIT 팝업</a>
+        <ul>
+          <li><a href="#">BIT 팝업 등록 리스트</a></li>
+          <li><a href="#">BIT 팝업 등록</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" class="menu"><img src="img/icon25.png" alt="">통계관리</a>
+    <ul class="subUl">
+      <li><a href="#">노선운행 그래프</a></li>
+      <li><a href="#">노선운행 이력</a></li>
+      <li><a href="#">노선운행 기록표</a></li>
+      <li><a href="#">노선별 정시성</a></li>
+      <li><a href="#">노선별 운행대수/횟수</a></li>
+      <li><a href="#">실시간 이벤트 정보</a></li>
+      <li><a href="#">버스도착정보 정확도</a></li>
+      <li><a href="#">노선 승하차 정보</a></li>
+      <li><a href="#">BIT 제공이력</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" class="menu"><img src="img/icon26.png" alt="">시스템관리</a>
+    <ul class="subUl">
+      <li><a href="#">권한 관리 리스트</a></li>
+      <li><a href="#">권한 관리 등록</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<script>
+  const menuLeft = document.querySelectorAll('.menu');
+
+  menuLeft.forEach((contents, idx) => {
+    contents.addEventListener('click', (e) => {
+      e.preventDefault()
+      if (contents.parentElement.childNodes.length > 1) {
+        if (contents.classList.contains('on')) {
+          contents.classList.remove('on');
+        } else {
+          for (const el of menuLeft) el.classList.remove('on');
+          contents.classList.add('on');
+        }
+      }
+    });
+  });
+</script>

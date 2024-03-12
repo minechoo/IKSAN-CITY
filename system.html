@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권한 관리 정보 등록/수정</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/common.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load("./header.html");
+      $('#footer').load("./footer.html");
+      $('#left_menu').load("./left_menu.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <main>
+    <div id="left_menu"></div>
+
+    <div class="content_wrap" id="content_wrap">
+      <h1><span class="blue">권한 관리 정보</span> 등록/수정</h1>
+      <div class="table_wrap">
+        <h2>권한 관리 등록 정보</h2>
+        <table class="t_left">
+          <caption>공지사항 등록</caption>
+          <colgroup>
+            <col style="width: 15%">
+            <col style="width: auto">
+          </colgroup>
+
+          <tr>
+            <th><label for="user">이름</label></th>
+            <td><input type="text" id="user"></td>
+          </tr>
+          <tr>
+            <th><label for="id">아이디</label></th>
+            <td>
+              <input type="text" id="id" class="mr_10">
+              <button class="btn_bd_grey">중복확인</button>
+              <span class="red">사용할 수 있는 아이디입니다</span>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="password_01">비밀번호</label></th>
+            <td>
+              <input type="password" class="w_320 mr_10" id="password_01">
+              <input type="checkbox" name="change" id="checkbox_00">
+              <label for="checkbox_00">변경</label>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="password_02">비밀번호 확인</label></th>
+            <td><input type="password" class="w_320" id="password_02"></td>
+          </tr>
+          <tr>
+            <th><label for="email">이메일</label></th>
+            <td>
+              <input type="text" id="email"> @ <input type="text" name="" id="">
+              <select name="" id="">
+                <option value="">선택안함</option>
+                <option value="">naver.com</option>
+                <option value="">gogle.com</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>권한</th>
+            <td>
+              <input type="radio" name="man" id="radio_01">
+              <label for="radio_01">관리자</label>
+              <input type="radio" name="man" id="radio_02">
+              <label for="radio_02">운영자</label>
+              <input type="radio" name="man" id="radio_03">
+              <label for="radio_03">운수사</label>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="affiliation   ">소속</label></th>
+            <td><input type="text" id="affiliation   "></td>
+          </tr>
+          <tr>
+            <th class="bd_bottom"><label for="etc">비고</label></th>
+            <td><input type="text" id="etc" class="w_500" placeholder="내용을 입력해 주세요"></td>
+          </tr>
+        </table>
+        <div class="t_right">
+          <button class="btn_grey mr_5">확인</button>
+          <button class="btn_grey_b">취소</button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+</body>
+
+</html>

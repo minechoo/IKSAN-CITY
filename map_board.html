@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상황판 화면</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/common.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85b99770536d15c81458d6cd36d22af3"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="board_wrap">
+
+    <h1><img src="img/board_top.png" alt="익산시 종합상황판"></h1>
+
+    <div class="w_1390">
+      <div class="radius mb_20">
+        <button class="btn_table"></button>
+        <table class="status_table h_57">
+          <caption>전체노선정보</caption>
+          <colgroup>
+            <col style="width: 14%">
+            <col style="width: 19%">
+            <col style="width: 19%">
+            <col style="width: 14%">
+            <col style="width: 19%">
+            <col style="width: 14%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>노선</th>
+              <th>차량</th>
+              <th>BIT</th>
+              <th>정류소</th>
+              <th>서버시스템 현황</th>
+              <th>DRT 운행차량</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <tr>
+              <td>
+                <input type="checkbox" name="" id="map_01" checked>
+                <label for="map_01">전체</label>
+                <input type="checkbox" name="" id="map_02">
+                <label for="map_02">운행</label>
+                <input type="checkbox" name="" id="">
+                <label for="map_03">미운행</label>
+              </td>
+              <td>
+                <input type="checkbox" name="" id="map_04">
+                <label for="map_04">전체</label>
+                <input type="checkbox" name="" id="map_05">
+                <label for="map_05">운행</label>
+                <input type="checkbox" name="" id="map_06">
+                <label for="map_06">노선이탈</label>
+                <input type="checkbox" name="" id="map_07">
+                <label for="map_07">통신없음</label>
+              </td>
+              <td>
+                <input type="checkbox" name="" id="map_08">
+                <label for="map_08">전체</label>
+                <input type="checkbox" name="" id="map_09">
+                <label for="map_09">정상</label>
+                <input type="checkbox" name="" id="map_10">
+                <label for="map_10">장애</label>
+                <input type="checkbox" name="" id="map_11">
+                <label for="map_11">미사용</label>
+              </td>
+              <td>
+                <input type="checkbox" name="" id="map_12">
+                <label for="map_12">전체</label>
+                <input type="checkbox" name="" id="map_13">
+                <label for="map_13">사용</label>
+                <input type="checkbox" name="" id="map_14">
+                <label for="map_14">미사용</label>
+              </td>
+              <td>
+                <input type="checkbox" name="" id="map_15">
+                <label for="map_15">전체</label>
+                <input type="checkbox" name="" id="map_16">
+                <label for="map_16">정상</label>
+                <input type="checkbox" name="" id="map_17">
+                <label for="map_17">장애</label>
+                <input type="checkbox" name="" id="map_18">
+                <label for="map_18">미사용</label>
+              </td>
+              <td>
+                <input type="checkbox" name="" id="map_19">
+                <label for="map_19">전체</label>
+                <input type="checkbox" name="" id="map_20">
+                <label for="map_20">사용</label>
+                <input type="checkbox" name="" id="map_21">
+                <label for="map_21">미사용</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">5</span>
+                </div>
+              </td>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">17</span>
+                  <span class="red">5</span>
+                </div>
+              </td>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">17</span>
+                  <span class="red">0</span>
+                </div>
+              </td>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">5</span>
+                </div>
+              </td>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">10</span>
+                  <span class="red">0</span>
+                </div>
+              </td>
+              <td>
+                <div class="t_inner_flex">
+                  <span class="black">75</span>
+                  <span class="blue">70</span>
+                  <span class="red">5</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="ex">
+          <!-- div -->
+        </div>
+      </div>
+    </div>
+
+    <div class="map" id="map">
+      <!-- 지도영역 -->
+    </div>
+  </div>
+
+
+  <div id="footer"></div>
+  <script>
+    //지도표시
+    const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+      };
+
+    const map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    // 마커가 표시될 위치입니다 
+    const markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+    // 마커를 생성합니다
+    const marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    const btnTable = document.querySelector('.btn_table')
+    const tbodyPanel = document.querySelector('.tbody')
+
+    btnTable.addEventListener('click', () => {
+      tbodyPanel.classList.toggle('off')
+      btnTable.classList.toggle('on')
+      console.log('click')
+    })
+  </script>
+</body>
+
+</html>

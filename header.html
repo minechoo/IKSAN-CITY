@@ -1,0 +1,167 @@
+<header>
+  <div class="header_top">
+    <div class="header_top_inner">
+      <div class="header_top_left">
+        <p class="top_b">익산시 BIS 운영단말</p>
+        <p class="top_n">전자지도</p>
+        <p class="top_m">메시지 전송</p>
+      </div>
+
+      <div class="header_top_right">
+        <p><span class="skyblue">익돌이</span>님</p>
+        <p class="login">로그아웃</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu_box">
+    <h1><img src="img/logo.png" alt="익산시"></h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">운영요약</a>
+          <ul class="sub_menu">
+            <li><a href="#">운영 현황</a></li>
+            <li><a href="#">구분별 등록</a></li>
+            <li><a href="#">노선별 전일 운행현황</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">실시간모니터링</a>
+          <ul class="sub_menu">
+            <li><a href="#">전자지도</a></li>
+            <li><a href="#">노선단면도</a></li>
+            <li><a href="#">BIT 상태</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">결행정보관리</a>
+          <ul class="sub_menu">
+            <li><a href="#">결행정보 리스트</a></li>
+            <li><a href="#">결행정보 등록</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">게시물관리</a>
+          <ul class="sub_menu">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">메시지</a></li>
+            <li><a href="#">BIT 팝업</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">통계관리</a>
+          <ul class="sub_menu">
+            <li><a href="#">노선운행 그래프</a></li>
+            <li><a href="#">노선운행 이력</a></li>
+            <li><a href="#">노선운행 기록표</a></li>
+            <li><a href="#">노선별 정시성</a></li>
+            <li><a href="#">노선별 운행대수/횟수</a></li>
+            <li><a href="#">실시간 이벤트 정보</a></li>
+            <li><a href="#">버스도착정보 정확도</a></li>
+            <li><a href="#">노선 승하차 정보</a></li>
+            <li><a href="#">BIT 제공이력</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">시스템관리</a>
+          <ul class="sub_menu">
+            <li><a href="#">권한 관리 리스트</a></li>
+            <li><a href="#">권한 관리 등록</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="status">
+      <div class="date">05.26(금)</div>
+      <div class="weather">
+        <p class="tem">
+          <span>17.0</span>℃
+        </p>
+        <p class="weather_inner">
+          흐림
+        </p>
+      </div>
+      <div class="dust">
+        <p>초미세먼지</p>
+        <p>10㎍/㎥ <span>좋음</span></p>
+      </div>
+      <div class="img_box">
+        <img src="img/icon04.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div id="menuWrapBg"></div>
+
+  <div class="sub">
+    <div class="sub_inner">
+      <span>홈</span><span><img src="img/ico_arrow.png" alt="화살표"></span><span>통게관리</span>
+      <span><img src="img/ico_arrow.png" alt="화살표"></span><span>노선운행 그래프</span>
+    </div>
+  </div>
+</header>
+
+<script>
+  //메뉴
+  const navA = document.querySelectorAll('.menu_box ul li a');
+  const wrapBg = document.querySelector('#menuWrapBg');
+  const subWrap = document.querySelectorAll('.sub_menu')
+  const subPannel = document.querySelectorAll('.sub_menu li a');
+  let gnbSlide = false;
+
+  navA.forEach((el, idx) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (el.classList.contains('on')) {
+        el.classList.remove('on');
+        wrapBg.classList.remove('on');
+        subWrap.forEach((el, idx) => {
+          el.classList.remove('on');
+        });
+        subPannel.forEach((el, idx) => {
+          el.style.opacity = '0'
+          el.style.transition = '0.5s'
+        });
+        return gnbSlide = false;
+
+      } else {
+        for (const el of navA) el.classList.remove('on');
+        el.classList.add('on');
+        wrapBg.classList.add('on');
+        console.log(subPannel)
+        subWrap.forEach((el, idx) => {
+          el.classList.add('on');
+        });
+        subPannel.forEach((el, idx) => {
+          el.style.opacity = '1';
+          el.style.transition = '1.2s'
+        });
+        return gnbSlide = true;
+
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (gnbSlide == true) { //슬라이드 메뉴가 열려 있을때
+      if (e.target != subPannel) {
+        let tgEl = e.target;
+        let header = tgEl.closest('header');
+
+        if (!header) { //header이 조상이 아니면 닫기//
+          for (const nav of navA) nav.classList.remove('on')
+          wrapBg.classList.remove('on');
+
+          subWrap.forEach((el, idx) => {
+            el.classList.remove('on');
+          });
+
+          subPannel.forEach((el, idx) => {
+            el.style.opacity = '0'
+            el.style.transition = '0.5s'
+          });
+          return gnbSlide = false;
+        }
+      }
+    }
+  });
+</script>

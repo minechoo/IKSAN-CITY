@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전자지도</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/common.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85b99770536d15c81458d6cd36d22af3"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load("./header.html");
+      $('#footer').load("./footer.html");
+      $('#left_menu').load("./left_menu.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <main>
+    <div id="left_menu"></div>
+
+    <div class="content_wrap" id="content_wrap">
+      <h1><span class="blue">전자</span>지도</h1>
+
+      <div class="map_wrap">
+        <div class="acc">
+          <dl>
+            <dt class="acc_dt on">전체노선정보</dt>
+            <dd>
+              <select name="" id="" class="blue_sel">
+                <option value="">운수사명</option>
+                <option value="">운수사명</option>
+                <option value="">운수사명</option>
+              </select>
+              <div class="radius">
+                <table class="status_table h_57">
+                  <caption>전체노선정보</caption>
+                  <thead>
+                    <tr>
+                      <th>운수사</th>
+                      <th>노선번호</th>
+                      <th>운행차량</th>
+                      <th>선택</th>
+                      <th>정보보기</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>익산운수</td>
+                      <td>65</td>
+                      <td>9</td>
+                      <td>
+                        <input type="checkbox" name="" id="check_01" checked>
+                        <label for="check_01"></label>
+                      </td>
+                      <td>
+                        <img src="img/ico_view.png" alt="" class="btn_info">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>익산운수</td>
+                      <td>65</td>
+                      <td>9</td>
+                      <td>
+                        <input type="checkbox" name="" id="check_02">
+                        <label for="check_02"></label>
+                      </td>
+                      <td>
+                        <img src="img/ico_view.png" alt="" class="btn_info">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>익산운수</td>
+                      <td>65</td>
+                      <td>9</td>
+                      <td>
+                        <input type="checkbox" name="" id="check_03">
+                        <label for="check_03"></label>
+                      </td>
+                      <td>
+                        <img src="img/ico_view.png" alt="" class="btn_info">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>익산운수</td>
+                      <td>65</td>
+                      <td>9</td>
+                      <td>
+                        <input type="checkbox" name="" id="check_04">
+                        <label for="check_04"></label>
+                      </td>
+                      <td>
+                        <img src="img/ico_view.png" alt="" class="btn_info">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="total_search Info">
+                <h1>노선 정보 <span class="blue">65</span></h1>
+                <div class="bg_grey">
+                  <p><span class="b_sky"></span>운수사 : 익산운수</p>
+                  <p><span class="b_sky"></span>현재 9대 운행중</p>
+                  <p><span class="b_sky"></span>기점 :</p>
+                  <p><span class="b_sky"></span>종점 :</p>
+                  <p><span class="b_sky"></span>운행시각(첫차/막차) : 05:30 / 24:00</p>
+                </div>
+              </div>
+            </dd>
+            <dt class="acc_dt">전체차량정보</dt>
+            <dd>content</dd>
+            <dt class="acc_dt">노선이탈정보</dt>
+            <dd>content</dd>
+            <dt class="acc_dt">전체BIT정보</dt>
+            <dd>content</dd>
+            <dt class="acc_dt">전체정류소정보</dt>
+            <dd>content</dd>
+          </dl>
+
+        </div>
+        <div class="map_area">
+          <div class="radius mb_20">
+            <table class="status_table h_57">
+              <caption>전체노선정보</caption>
+              <thead>
+                <tr>
+                  <th>운수사</th>
+                  <th>노선번호</th>
+                  <th>운행차량</th>
+                  <th>선택</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="" id="map_01" checked>
+                    <label for="map_01">전체</label>
+                    <input type="checkbox" name="" id="map_02">
+                    <label for="map_02">운행</label>
+                    <input type="checkbox" name="" id="">
+                    <label for="map_03">미운행</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="" id="map_04">
+                    <label for="map_04">전체</label>
+                    <input type="checkbox" name="" id="map_05">
+                    <label for="map_05">운행</label>
+                    <input type="checkbox" name="" id="map_06">
+                    <label for="map_06">노선이탈</label>
+                    <input type="checkbox" name="" id="map_07">
+                    <label for="map_07">통신없음</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="" id="map_08">
+                    <label for="map_08">전체</label>
+                    <input type="checkbox" name="" id="map_09">
+                    <label for="map_09">운행</label>
+                    <input type="checkbox" name="" id="map_10">
+                    <label for="map_10">장애</label>
+                    <input type="checkbox" name="" id="map_11">
+                    <label for="map_11">미사용</label>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="" id="map_12">
+                    <label for="map_12">전체</label>
+                    <input type="checkbox" name="" id="map_13">
+                    <label for="map_13">사용</label>
+                    <input type="checkbox" name="" id="map_14">
+                    <label for="map_14">미사용</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="t_inner_flex">
+                      <span class="black">75</span>
+                      <span class="blue">70</span>
+                      <span class="red">5</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="t_inner_flex">
+                      <span class="black">75</span>
+                      <span class="blue">70</span>
+                      <span class="red">5</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="t_inner_flex">
+                      <span class="black">75</span>
+                      <span class="blue">70</span>
+                      <span class="red">5</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="t_inner_flex">
+                      <span class="black">75</span>
+                      <span class="blue">70</span>
+                      <span class="red">5</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="map" id="map">
+            <!-- 지도영역 -->
+            <button id="map_scale"></button>
+            <div class="bus_stop">
+              <h1>익산역[2800201]</h1>
+              <button class="close">close</button>
+              <div class="pop_content">
+                <h2><span class="blue">정류소</span> 도착정보</h2>
+                <table>
+                  <caption>정류소 도착정보</caption>
+                  <thead>
+                    <th>도착예정버스</th>
+                    <th>도착예정시각</th>
+                    <th>현재위치</th>
+                  </thead>
+                </table>
+                <div class="h_135_scroll">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2"><span class="blue">1030호</span></td>
+                        <td><span class="orange">약 11분</span></td>
+                        <td>6전</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><span class="red">다음 도착 예정버스 정보가 없습니다</span></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" class="t_left h_auto p_10_20">
+                          <div>
+                            <span class="b_sky"></span>이전 역과의 평균 소요시각 :
+                            <span class="orange">70초</span>
+                          </div>
+                          <div>
+                            <span class="b_sky"></span> 다음 역과의 평균 소요시각 :
+                            <span class="orange">310초</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" class="t_left">
+                          <span class="b_sky"></span> 다음 역과의 평균 소요시각 :
+                          <span class="orange">310초</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 class="mt_20"><span class="blue">경유</span>노선정보</h2>
+                <table>
+                  <caption>정류소 도착정보</caption>
+                  <thead>
+                    <th>노선번호</th>
+                    <th>경유노선정보</th>
+                  </thead>
+                </table>
+                <div class="h_135_scroll">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2"><span class="blue">106번</span></td>
+                        <td>익산역 - 익산역</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 class="mt_20"><span class="blue">BIT</span>설치여부: <span class="bg_blue">설치</span></span></h2>
+              </div>
+            </div>
+            <div class="bus_stop h_auto pos_01">
+              <h1>전북 73아2647</h1>
+              <button class="close">close</button>
+              <div class="pop_content">
+                <h2><span class="blue">정류소</span> 도착정보</h2>
+                <table>
+                  <caption>정류소 도착정보</caption>
+                  <thead>
+                    <th>버스운행노선</th>
+                    <th>버스운행회사</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2"><span class="blue">M7106(고양시)</span></td>
+                      <td>가온누리엠</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="h_auto p_10_20">
+                        <div>
+                          <span class="b_sky"></span>
+                          앞 차 운행 버스 <span class="red">앞 차 정보가 없습니다.</span>
+                        </div>
+                        <div>
+                          <span class="b_sky"></span>
+                          뒷 차 운행 버스 <span class="red">뒷 차 정보가 없습니다.</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="total_search">
+              <h1><span class="blue">통합</span> 검색</h1>
+              <div class="bg_grey">
+                <p><span class="b_sky"></span>노선/차량/정류소/BIS 검색</p>
+                <div class="search_align">
+                  <select name="" id="" class="sel_black_arrow">
+                    <option value="">선택하세요</option>
+                    <option value="">선택하세요</option>
+                    <option value="">선택하세요</option>
+                  </select>
+                  <button class="btn_blue">검색</button>
+                </div>
+
+                <p class="mt_20"><span class="b_sky"></span>운수사명 검색</p>
+                <div class="search_align">
+                  <select name="" id="" class="sel_black_arrow">
+                    <option value="">선택하세요</option>
+                    <option value="">선택하세요</option>
+                    <option value="">선택하세요</option>
+                  </select>
+                  <button class="btn_blue">검색</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="radius no_round">
+            <table class="status_table h_57 no_round">
+              <caption>전체노선정보</caption>
+              <thead>
+                <tr>
+                  <th>정류소명</th>
+                  <th>기기아이디</th>
+                  <th>함체온도</th>
+                  <th>습도</th>
+                  <th>팬상태</th>
+                  <th>도어상태</th>
+                  <th>히터상태</th>
+                  <th>업데이트 시각</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="blue weight_500">선경아파트(07085)</span>
+                  </td>
+                  <td>692937700</td>
+                  <td>34.0℃</td>
+                  <td>60</td>
+                  <td>켜짐</td>
+                  <td>도어닫힘</td>
+                  <td>켜짐</td>
+                  <td>2023-05-09<br>
+                    18:59</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    //아코디언
+    const acc = document.querySelectorAll('.acc_dt');
+
+    acc.forEach((el, idx) => {
+      el.addEventListener('click', () => {
+        if (el.classList.contains('on')) {
+          el.classList.remove('on');
+        } else {
+          for (const el of acc) el.classList.remove('on');
+          el.classList.add('on');
+        }
+      });
+    });
+
+    //지도표시
+    const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+      };
+
+    const map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    // 마커가 표시될 위치입니다 
+    const markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+    // 마커를 생성합니다
+    const marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    //지도 확대
+    const scale = document.getElementById('map_scale')
+    const wid = document.querySelector('.map_wrap')
+    scale.addEventListener('click', () => {
+      wid.classList.toggle('on')
+    })
+
+    //팝업 닫기
+    const close = document.querySelectorAll('.close')
+    close.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        e.target.parentElement.remove()
+      })
+    })
+
+    //아코디언 테이블 정보보기
+    const btnInfo = document.querySelectorAll('.btn_info')
+    const infoBox = document.querySelector('.Info')
+    btnInfo.forEach((btn, idx) => {
+      btn.addEventListener('click', (e) => {
+        if (btn.classList.contains('on')) {
+          btn.classList.remove('on');
+          infoBox.style.display = 'none'
+        } else {
+          for (const el of btnInfo) el.classList.remove('on');
+          btn.classList.add('on');
+          infoBox.style.display = 'block'
+        }
+
+      })
+    })
+  </script>
+</body>
+
+</html>

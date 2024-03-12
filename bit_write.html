@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIT 상태정보 등록</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/common.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load("./header.html");
+      $('#footer').load("./footer.html");
+      $('#left_menu').load("./left_menu.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <main>
+    <div id="left_menu"></div>
+
+    <div class="content_wrap" id="content_wrap">
+      <h1><span class="blue">BIT</span>상태정보 등록/수정</h1>
+      <div class="radius_bit">
+        <button class="close">close</button>
+        <table class="bit_table">
+          <caption>공지사항 등록</caption>
+          <colgroup>
+            <col style="width: 15%">
+            <col style="width: auto">
+          </colgroup>
+          <tr>
+            <th colspan="4" class="black bg_G white">BIT 등록/수정</th>
+          </tr>
+          <tr>
+            <th class="pt_40"><span class="b_sky"></span>정류소명</th>
+            <td class="pt_40"><input type="text"></td>
+          </tr>
+          <tr>
+            <th><span class="b_sky"></span>작성자</th>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <th><span class="b_sky"></span>정류소명</th>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <th><span class="b_sky"></span>작성자</th>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td colspan="4" class="p_20">
+              <div class="t_right pr_40">
+                <button class="btn_grey">확인</button>
+                <button class="btn_grey_b">취소</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+</body>
+
+</html>
